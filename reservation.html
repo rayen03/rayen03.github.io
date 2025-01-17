@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Eco Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="logo_t.png" alt="Logo" class="logo">
+                <h1 class="animate__animated animate__fadeInDown">Eco Design</h1>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <div class="hero">
+        <div class="carousel">
+            <div><img src="k.jpeg" alt="Cuisine Universitaire"></div>
+            <div><img src="k0.jpeg" alt="Placeholder 2"></div>
+            <div><img src="k1.jpeg" alt="Placeholder 3"></div>
+            <div><img src="k2.jpeg" alt="Placeholder 4"></div>
+            <div><img src="k3.jpeg" alt="Placeholder 5"></div>
+        </div>
+        <div class="overlay">
+            <h1>Bienvenue dans notre cuisine !</h1>
+            <button onclick="document.getElementById('reservation-form').scrollIntoView({behavior: 'smooth'});">Réservez maintenant</button>
+        </div>
+    </div>
+
+    <main>
+        <h1>Réservez votre place</h1>
+
+        <div class="error-message" id="error-message">
+            Veuillez remplir tous les champs requis correctement.
+        </div>
+
+        <form id="reservation-form">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Entrez votre nom complet" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+
+            <label for="phone">Numéro de téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
+
+            <label for="date">Date de réservation</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Heure de réservation</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="persons">Nombre de personnes</label>
+            <input type="number" id="persons" name="persons" placeholder="Entrez le nombre de personnes" required>
+
+            <button type="button" onclick="validateAndSubmitReservation()">Confirmer la réservation</button>
+        </form>
+
+        <div class="success-message" id="success-message">
+            <p>Réservation réussie !</p>
+            <p id="reservation-details"></p>
+        </div>
+    </main>
+
+    <!-- Add jQuery and Slick Carousel Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Initialize Slick Carousel
+        $(document).ready(function(){
+            $('.carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                fade: true,
+                cssEase: 'linear',
+                responsive: [
+                    {
+                        breakpoint: 768, // Adjust settings for tablets and smaller
+                        settings: {
+                            arrows: false, // Hide arrows on smaller screens
+                            dots: true // Keep dots for navigation
+                        }
+                    },
+                    {
+                        breakpoint: 480, // Adjust settings for mobile
+                        settings: {
+                            arrows: false, // Hide arrows on mobile
+                            dots: true // Keep dots for navigation
+                        }
+                    }
+                ]
+            });
+
+            // Toggle mobile menu
+            $('.menu-toggle').on('click', function() {
+                $(this).toggleClass('active');
+                $('nav ul').toggle();
+            });
+        });
+
+        function validateAndSubmitReservation() {
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const date = document.getElementById('date');
+            const time = document.getElementById('time');
+            const persons = document.getElementById('persons');
+            const errorMessage = document.getElementById('error-message');
+
+            let isValid = true;
+
+            // Reset error styles
+            [name, email, phone, date, time, persons].forEach(field => {
+                field.classList.remove('error');
+            });
+
+            // Validate fields
+            if (!name.value) {
+                name.classList.add('error');
+                isValid = false;
+            }
+            if (!email.value || !email.value.includes('@')) {
+                email.classList.add('error');
+                isValid = false;
+            }
+            if (!phone.value) {
+                phone.classList.add('error');
+                isValid = false;
+            }
+            if (!date.value) {
+                date.classList.add('error');
+                isValid = false;
+            }
+            if (!time.value) {
+                time.classList.add('error');
+                isValid = false;
+            }
+            if (!persons.value || persons.value <= 0) {
+                persons.classList.add('error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            errorMessage.style.display = 'none';
+
+            const successMessage = document.getElementById('success-message');
+            const reservationDetails = document.getElementById('reservation-details');
+
+            reservationDetails.innerHTML = `Merci, <strong>${name.value}</strong> ! Votre réservation pour <strong>${persons.value}</strong> personne(s) le <strong>${date.value}</strong> à <strong>${time.value}</strong> a été confirmée.`;
+            successMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

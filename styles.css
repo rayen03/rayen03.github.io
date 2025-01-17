@@ -1,0 +1,359 @@
+/* Color Palette */
+:root {
+    --primary-color: #B0955F;
+    --secondary-color: #AB4C2E;
+    --accent-color: #91B891;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px; /* Adjust the size of the logo */
+    margin-right: 10px; /* Add some spacing between the logo and text */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust font size if needed */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.menu-toggle.active + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: var(--primary-color);
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+.menu-toggle.active + ul li {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.hero .carousel {
+    width: 100%;
+    height: 50vh; /* Default height for desktop */
+}
+
+.hero .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Default font size for desktop */
+    margin: 0 0 10px;
+    font-family: 'Georgia', serif;
+}
+
+.hero button {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #8E3B26;
+}
+
+/* Reserve Now Section Styles */
+#reserve-now {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+#reserve-now img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust this value as needed */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#reserve-now .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+}
+
+#reserve-now .overlay h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#reserve-now .overlay button {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reserve-now .overlay button:hover {
+    background-color: #8E3B26;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+}
+
+form {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: var(--text-color);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input.error, select.error {
+    border-color: var(--secondary-color);
+    background-color: #FDEDEC;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #7AA57A;
+}
+
+.error-message {
+    display: none;
+    background-color: #F8D7DA;
+    color: #721C24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #F5C6CB;
+    border-radius: 5px;
+}
+
+.success-message {
+    display: none;
+    background-color: #DFF2BF;
+    color: #4F8A10;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    .hero .carousel {
+        height: 40vh; /* Adjust height for tablets and smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Smaller font size for tablets */
+    }
+
+    .hero button {
+        font-size: 0.9rem; /* Smaller button text for tablets */
+        padding: 6px 12px;
+    }
+
+    #reserve-now img {
+        max-height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .carousel {
+        height: 30vh; /* Adjust height for very small screens */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .hero button {
+        font-size: 0.8rem; /* Smaller button text for mobile */
+        padding: 5px 10px;
+    }
+
+    #reserve-now img {
+        max-height: 200px; /* Adjust height for very small screens */
+    }
+}
+/* Menu Toggle Styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 24px; /* Larger font size for better visibility */
+    padding: 5px 10px;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Show menu toggle on smaller screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the toggle button */
+    }
+
+    nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 10px;
+        background-color: var(--primary-color);
+        border: 1px solid #fff;
+        padding: 10px;
+        z-index: 999; /* Ensure it appears above other elements */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle.active + ul {
+        display: flex; /* Show the menu when toggle is active */
+    }
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #carousel {
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        header, footer {
+            background-color: #B0955F;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #B0955F;
+            color: white;
+            border: none;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+
+        .menu-toggle.active + ul {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: #B0955F;
+            border: 1px solid #fff;
+            padding: 10px;
+        }
+
+        .menu-toggle.active + ul li {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #AB4C2E;
+            margin-bottom: 20px;
+        }
+
+        .activity {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        #values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-box {
+            width: 200px;
+            text-align: center;
+        }
+
+        .value-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .value-box p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .activity {
+                padding: 15px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+
+            .value-box {
+                width: 150px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Add a logo before the "Eco Design" text -->
+            <div class="header-content">
+                <img src="logo_t.png" alt="Logo" class="logo">
+                <h1 class="animate__animated animate__fadeInDown">Eco Design</h1>
+            </div>
+   
+        </div>
+    </header>
+
+
+    <section id="carousel">
+        <div class="carousel">
+            <div><img src="image0.jpeg" alt="Placeholder 1"></div>
+            <div><img src="image1.jpeg" alt="Placeholder 2"></div>
+            <div><img src="image2.jpeg" alt="Placeholder 3"></div>
+            <div><img src="image3.jpeg" alt="Placeholder 1"></div>
+            <div><img src="image4.jpeg" alt="Placeholder 2"></div>
+            <div><img src="image7.jpeg" alt="Placeholder 3"></div>
+        </div>
+    </section>
+
+    <section id="about" class="animate__animated animate__fadeInUp">
+        <div class="container">
+            <h2>À propos d'eco Design</h2>
+            <p>Bienvenue à “éco-design”, un espace où la créativité rencontre la durabilité. Nous sommes une école de design dédiée à former les esprits innovants et responsables de demain.
+
+                Notre faculté se distingue par son engagement envers l’écologie, l’inclusivité, et l’apprentissage collaboratif. Nous croyons fermement que le design peut transformer les défis d’aujourd’hui en solutions durables pour un avenir meilleur.</p>
+        </div>
+    </section>
+
+    <section id="values" class="animate__animated animate__fadeInUp">
+        <div class="container">
+            <h2>Nos espaces</h2>
+            <div id="values-container">
+                <div class="value-box">
+                    <img src="k.jpeg"Innovation">
+                    
+                    <p>La cuisine verte</p>
+                </div>
+                <div class="value-box">
+                    <img src="lab.jpeg" alt="Durable">
+                    <p>Le laboratoire vivant</p>
+                </div>
+                <div class="value-box">
+                    <img src="potdur.png" alt="Collaboration">
+                    <p>Le potager durable </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="animate__animated animate__fadeInUp">
+        <div class="container">
+            <h2>Nos formations</h2>
+            <div class="activity">
+                <h3>Licence en Design</h3>
+                <p> Spécialisations en design d’espace, design d’image, et design de produit.</p>
+            </div>
+            <div class="activity">
+                <h3>Master en Design</h3>
+                <p>Un approfondissement en design d’espace, design d’image, et design de produit, avec une approche axée sur la recherche, l'innovation durable, et les projets collaboratifs.</p>
+            </div>
+            <div class="activity">
+                <h3>Diplôme en Agriculture Durable</h3>
+                <p>Un programme unique axé sur la permaculture et les pratiques agricoles écoresponsables. Ce cursus inclut des cours spécialisés, tels que la culture de permaculture, qui offrent une compréhension approfondie des systèmes agricoles durables et leur intégration dans les environnements urbains et éducatifs.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="reserve-now" class="animate__animated animate__fadeInUp">
+        <div class="container">
+            <img src="k1.jpeg" alt="Reservation Placeholder">
+            <div class="overlay">
+                <h2>Réservation espace cuisine</h2>
+                <button onclick="window.location.href='reservation.html'">Réservez Maintenant</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact" class="animate__animated animate__fadeInUp">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Adresse: manouba, Tunisie</p>
+            <p>Téléphone: (+216) 95 930 921 </p>
+            <p>Fax: (+216) 70 221 001</p>
+            <p>E-mail: info@ecodesign.com</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                fade: true,
+                cssEase: 'linear'
+            });
+
+            $('.menu-toggle').on('click', function() {
+                $(this).toggleClass('active');
+                $('nav ul').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
